@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- TailwindCss Config -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Bootstrap Config -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+
+    <!-- Google web font Config -->
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="toggle.css">
+    
+    <script>
+        tailwind.config = {
+            content: [
+                "./index.html",
+            ],
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        nanum: ['Nanum Gothic']
+                    }
+                }
+            }
+        }
+    </script>
+    <script defer src="./darkmode.js"></script>
+    <script defer type="module" src="./app.js"></script>
+</head>
+
+<body>
+    <div class="font-noto">
+        <article class="flex flex-col justify-between h-screen dark:bg-slate-800">
+            <!-- Header(네비게이션 바) 부분 -->
+            <header class="flex items-center justify-between px-0 py-3 my-0 mx-4">
+                <div class="flex items-center">
+                    <h1>
+                        <a href="http://www.google.com">
+                            <img class="w-28" src="https://papago.naver.com/97ec80a681e94540414daf2fb855ba3b.svg"
+                                alt="papagpo logo">
+                        </a>
+                    </h1>
+                    <ul class="flex ml-5 font-semibold text-[16px]">
+                        <!--반응형 사이즈 sm: 모바일(sm 사이즈가 되면 hidden: 웹사이트 번역, GYM, 사전 hidden), md: 태블릿 이상-->
+                        <li class="hidden sm:hidden md:mr-3 md:inline lg:mr-5">
+                            <a href="#" class="dark:text-white">웹사이트 번역</a>
+                        </li>
+                        <li class="hidden sm:hidden md:mr-3 md:inline lg:mr-5">
+                            <a href="#" class="dark:text-white">GYM</a>
+                        </li>
+                        <li class="hidden sm:hidden md:inline">
+                            <a href="https://dict.naver.com/" class="dark:text-white">사전</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="flex">
+                    <div>
+                        <div class="flex items-center mr-4 space-x-2">
+                            <label class="switch">
+                                <span class="sun"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <g fill="#ff8352">
+                                            <circle r="5" cy="12" cx="12"></circle>
+                                            <path
+                                                d="m21 13h-1a1 1 0 0 1 0-2h1a1 1 0 0 1 0 2zm-17 0h-1a1 1 0 0 1 0-2h1a1 1 0 0 1 0 2zm13.66-5.66a1 1 0 0 1 -.66-.29 1 1 0 0 1 0-1.41l.71-.71a1 1 0 1 1 1.41 1.41l-.71.71a1 1 0 0 1 -.75.29zm-12.02 12.02a1 1 0 0 1 -.71-.29 1 1 0 0 1 0-1.41l.71-.66a1 1 0 0 1 1.41 1.41l-.71.71a1 1 0 0 1 -.7.24zm6.36-14.36a1 1 0 0 1 -1-1v-1a1 1 0 0 1 2 0v1a1 1 0 0 1 -1 1zm0 17a1 1 0 0 1 -1-1v-1a1 1 0 0 1 2 0v1a1 1 0 0 1 -1 1zm-5.66-14.66a1 1 0 0 1 -.7-.29l-.71-.71a1 1 0 0 1 1.41-1.41l.71.71a1 1 0 0 1 0 1.41 1 1 0 0 1 -.71.29zm12.02 12.02a1 1 0 0 1 -.7-.29l-.66-.71a1 1 0 0 1 1.36-1.36l.71.71a1 1 0 0 1 0 1.41 1 1 0 0 1 -.71.24z">
+                                            </path>
+                                        </g>
+                                    </svg>
+                                </span>
+                                <span class="moon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                                        <path
+                                            d="m223.5 32c-123.5 0-223.5 100.3-223.5 224s100 224 223.5 224c60.6 0 115.5-24.2 155.8-63.4 5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-9.8 1.7-19.8 2.6-30.1 2.6-96.9 0-175.5-78.8-175.5-176 0-65.8 36-123.1 89.3-153.3 6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8z">
+                                        </path>
+                                    </svg>
+                                </span>
+                                <input id="checkbox" type="checkbox" class="input">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                </div>
+            </header>
+            <!-- Section(번역입력폼) 부분 -->
+            <section
+                class="flex flex-col items-center justify-center mt-4 md:flex md:flex-row md:justify-center dark:bg-slate-800 dark:text-white">
+                <!-- Card -->
+                <div
+                    class="flex flex-col min-w-[26rem] w-1/3 h-[420px] m-2 shadow-md border-[1px] rounded-xl border-slate-300 focus-within:border-[#21dc6d] focus-within:border-1 focus-within:border-solid">
+                    <!-- Card header -->
+                    <div class="flex items-center justify-between mt-4 ml-2 mr-3">
+                        <select
+                            class="form-select text-xl border-none focus:border-[#21dc6d] focus:shadow-none dark:bg-slate-800 dark:text-white"
+                            style="width: auto" aria-label="Default select example">
+                            <option selected>언어감지</option>
+                            <option value="ko">한국어</option>
+                            <option value="en">English</option>
+                            <option value="ja">日本語</option>
+                        </select> 
+                        <button>
+                            <img class="h-6 mr-2"
+                                style="filter: invert(96%) sepia(0%) saturate(0%) hue-rotate(204deg) brightness(87%) contrast(96%);"
+                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABHNCSVQICAgIfAhkiAAAAAFzUkdCAK7OHOkAAAAEZ0FNQQAAsY8L/GEFAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAADVpJREFUeF7t3V2oZXUdxvF5yzHftUjRRCcRS7EwQoWypLfJSqnATMmLKIUSGxW66aJuxKAICwsMu/CiELGkQlPT1CYtp4ys1FBKHVNDwebFl3wbp+e/9zkyntY4R8/Z56y9f58PfD1rbRS8W89Za5+9lwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwuZZP/QSgn3ZJB6Y3pefTswkAmDBvS19Pa9PGtHVGT6U/pwvTu9PSBACMqePTjWnmBX9H3Z1OT8sSADAm3pguT10X91fTunR4AgB67p3pX6nrgv5aejKdkgCAnnpP2py6LuRzaUs6OwEAPXNE2pC6LuDz0YtpTQIAeqL9WV97417XhXs+MwIAoEe+mbou2KPICACAHliV2gf5dF2sR5URAACL7KLUdZEedUYAACySlWmUb/zbUUYAACyCE1LXhXkhMwIAYIFdkLouygudEQAAC2g+Pu53vjICAGCB/DZ1XYwXKyMAABbAPanrQryYGQEAMGJ/TV0X4cXOCACAEbo2dV2A+5ARAAAjcmnquvj2JSOgmOVTPwEYrYPTR4aHvbQ0rU4b07r2AgAwd0emrt+8+5Y7AQAwz+5MXRfdvmUEFOARAMDC2ZI+PjzsNY8DAGAe7ZzuT12/dfcxdwIAYJ6clLoutn3NCACAefKD1HWx7WtGAADMg5XphtR1se1rRgAAzIPd0k2p62Lb14wAAJgHuyYjAAAKaiPgltR1se1rRgAAzIPdkxEAAAW1EeBxAAAU5HEAABTlcQAAFOVxAAAU5XEAABTlTgAAFOXDggCgKI8DAKAojwMAoCiPAwCgKI8DAKAoHxYEAEV5TwAAFOVxAAAU5XEAABRlBABAUd4TAABFeU8AABTlcQAAFOVxAAAU5WODAaAoIwAAijICAKAoIwAAijICAKAoIwAAijICAKAoIwAAijICAKAoIwAAijICAKAoIwAAijICAKAoIwAAijICAKAoIwAAijICAKAoIwAAijICAKAoIwAAijICAKAoIwAAijICAKAoIwAAijICAKAoIwAAijICAKAoIwAAijICAKCoNgJuTl0X275mBADAPDACAKAoIwAAijICAKAoIwAAijICAKAoIwAAijICAKAoIwAAijICAKAoIwAAijICAKAoIwAAijICAKAoIwAAijICAKAoIwAAijICAKAoIwAAijICAKAoIwAAijICAKAoIwAAijICAKAoIwAAijICAKAoIwAAijICAKAoIwAAijICAKAoIwAAijICAKAoIwAAijICAKAoIwAAijICAKAoIwAAijICAKAoIwAAijICAKAoIwAAijICAKAoIwAAijICAKAoIwAAijICAKAoIwAAijICAKAoIwAAijICAKAoIwAAipr4EbB06uertW96S9ozrWwvAMCEaSPge2nvwdl4aEPg3PTdwdkrmO0A2Cl9NJ2c3p/2SwBA/8xqBOxoACxLp6bz08HtBQCg93Y4ApZP/exyZLomnZX2ai8AAGOh/YK/Om1M69oLM21vAJyYrk4HDc4AgHHziiOgawCckX6Udh6cAQDjanoEPJpuby9Mm/kegPYGv+vSisEZADAJXkgnpfZof2DbAdD+rO+PaZ/BGQAwSTanI9JD7aS9y3/axcnFHwAm0x6pfa7BwPQdgBPSL4eHAMAE+0C6cfoOwFemfgIAk619PsDgDkD7gJ/7po4BgMnWvjPg4HYHoL0r0MUfAGpo1/7V7R/HDU4BgCo+2AbA4cNjAKCIQ9ut//+kcfqqQwBgbh5vA6B9YxAAUMfm9gjg6eExAFDEljYANgyPAYAiNrUBcM/wGAAo4q42AP4wPAYAirijDYDrh8cAQBG/aH8F0EbAg+mA9goAMNHWp1Xt4t8+E/j77RUAYOJdmLZOfwdA+47ge9O+gzMAYBI9kg5Jz7Q7AM3mdN7wEACYUGelZ9rB8vaPKX9LbRW8Y3AGAEySS9K3hof//zXAO6dr0vGDMwBgElybPpGeHZzF9COAae22wInphsEZADDurkufSi9d/JttHwFMey5dnnZLx6aZdwkAgP5rX/Z3QTojtWv7y+zo4v7edFF6++AMABgH69I56bbBWYfZ/Hbf/p32WODMtDqtSABAvzyfrko/TO39fK/4df+v9vb+num41P5SYFVqnx+wUwIAFtZ/0+Op/W1/+42/9WQCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACgtKVTP2dr13R0Ojbtn96QdkkAwMJ6Nm1K96c70i3piTQrsxkA7d9ZnT6fTko7JQCgX55L16RL0i/T1rRdOxoA7Tf9C6d+AgDj4U/p7PT7wVmH5VM/Z2qvn58uTQe2FwCAsdEe039ueLhk7dTPl+m6A9Ce6V+Z2m1/AGC8XZHaGHhqcDZl5gBYmX6eXPwBYHK09wacmLYMzmLmI4CL06eHhwDAhDg0tb/k+9XgLLa9A/DJ1G79AwCT6eT0k3YwPQBen/6R2psGAIDJ9HA6LD21bHC6ZMmZycUfACbbAemL7aDdAWi1TxE6qL0AAEy0B9OqdvE/Jt3WXgEASnhfewTQPt4XAKjjw20AHDU8BgCKOKYNgMOHxwBAEYe1AbDH8BgAKGKf9ibA9n3CvuIXAOrY2u4APD08BgCK2NgGwAPDYwCgiEfaALh3eAwAFHF3GwA3Do8BgCLWtjcBHpzuS+0YAJhsW9Oq6fcAXNdeAQAm3q/T+uXD4yWPpdOHhwDAhGq//X82PdTuADTXp6uHhwDAhLoyDb4AcNvn/u3rgO9Muw3OAIBJ8nh6Vxr8+f/0HYBmfTo1bRmcAQCT4vl0cnrps3+m3wMwrX0mQHs/wMeSvwoAgPH3YvpS+ungbMrMAdDcnjam1ckIAIDxtSmdki4bnG2jawA061L7j4wAABhPd6V2Hb91cDbD9gZA094l6E4AAIyXh9PX0hfSo+2FLrO5sK9JFyYjAAD6qV3ob0pXpKvSc+kVzfaiPo4jYEP6cnpicAYAk6Vd5Den9nH+/24vjMo5qb2TsH2K0LjUnnvsngCAOWh3AowAACjICACAoowAACjKCACAorwxEACKMgIAoCgjAACKMgIAoCgjAACKMgIAoCgjAACKMgIAoCgjAACKMgIAoCgjAACKMgIAoCgjAACKMgIAoCgjAACKMgIAoCgjAACKMgIAoCgjAACKMgIAoCgjAACKMgIAoCgjAACKMgIAoCgjAACKMgIAoCgjAACKMgIAoCgjAACKMgIAoCgjAACKMgIAoCgjAACKMgIAoCgjAACKMgIAoCgjAACKMgIAoCgjAACKWpOMAAAoyJ0AACjKCACAoowAACjKCACAoowAACjKCACAoowAACjKCACAoowAACjKCACAoowAACjKCACAoowAACjKCACAoowAACjKCACAoowAACjKCACAoowAACjKCACAoowAACjKCACAoowAACjKCACAoowAACjKCACAoowAACjKCACAoowAACjKCACAoowAACjKCACAoowAACjKCACAoowAACjKCACAoowAAChqHEfALckIAIA5MgIAoCiPAwCgKHcCAKAoIwAAijICAKAo7wkAgKLcCQCAoowAACjK4wAAKMoIAICiPA4AgKLcCQCAoowAACjK4wAAKMqdAAAoyggAgKI8DgCAotwJAICi3AkAgKKMAAAoyggAgKLG9T0BuyUAYA7GcQRcl16XAFhAy6d+MhluS5vS6rS0vTAGDkl7pGsHZwDAazZudwLa/+uHEgAwR+M2Av6eViQAYI7GbQSclgCAeTBOI2BtAgDmybiMgBfS3gmAEfNXADWMy18HLEt3pDsHZwCMjAFQx7iMgIeTPwkEgHnW98cBlyUAYAT6PAJ+kwCAEenrCPhdAgBGqI8j4GcJgBFr77qmru+k81K78PbFQ1M/AYAR69OdgHMTALBA+jICjkoAwAJa7BHwzzQuX2MMABNlMUfAVxMAsEgWYwRsSHslAGARLfQIWJMAgB5YqBFwc/K9FADQI6MeAQ+k/RMA0DNnpy2p6wI+l9antyYAoKc+k55IXRfy11L73v83JwCg5w5Nt6WuC/psez59O+2cAIAx0T6o57T0l9R1gd9e7cL/43R4AgDG2NHpG+nW9Fja9n0CT6f70mWpDYa9EwAwgVak/ZKLPQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALI4lS/4HSafTZlHSrHgAAAAASUVORK5CYII="
+                                alt="lang-change">
+                        </button>
+                    </div>
+
+                    <!-- Card body -->
+                    <div class="flex-auto mt-3 h-1/2 border-t-[1px]">
+                        <div class="block h-full p-2 text-base">
+                            <textarea
+                                class="w-full h-full p-2 text-4xl outline-none resize-none placeholder:text-gray-400 dark:bg-slate-800 dark:text-white dark:placeholder:text-white"
+                                placeholder="번역할 내용을 입력하세요" id="translate-box" autofocus></textarea>
+                        </div>
+                    </div>
+                    <p id="word-counter" class="flex justify-end mr-2 p-2 text-gray-400">
+                        <span id="word-count">0</span>&nbsp;/&nbsp;<span>3000</span>
+                    </p>
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <button><img class="h-6 ml-4"
+                                    style="filter: invert(96%) sepia(0%) saturate(0%) hue-rotate(204deg) brightness(87%) contrast(96%);"
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAA8gAAAPIBlLUtiQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAJ2SURBVFiF1dZPiJVlFAbw33EGRQSJKBeDjqakLcWFhIKWJiih0GLKhdBCEGyjBJG1cRtCoAs3QjQLQdeKBDolBA3RogadFrVobNAYbZMYKolzWtzXuLzce713unD1hY8Lz3P+PN/5zj3njcw0yLNooNmfSwERsSkibkXEoS7tj0fE1Yh48X8LiIgt+AYjWNul2xVswrcRMbJgARGxE5cxg7vd+mXmJLbjJXwXEat6FhARe3EJ1/AmHnYroIiYwlYsxZcREc1kxwf78QgTWFawOXzWxv4NfIRFLbh3kDj8H/aU5AfxGBewpAnvJGCsJLmE5S3487iH0Y4CcATzOIfhimsroPDv4T6+riuBl/HgiT98jqnquVbe4kybUnYUUGz2lRiftODO4RaGohj9iOtV70xl5slWTRURcxjPzGOt+Ca7k/gAqzLzdhO+G19hjyLg2NOasVMF8Creb2G3Av/g4wofwp843a9RvBrjEXGkGczMOxrNeKDCH+MXrOmLgMyc0OiXExGxtKJ/wPqIqHP9jtF+LqMvsBivV/hMwVdW+Gy/BSzo9FPAQY2G+77CXyn4zQofxexwPzJHxFs4hKOZ+aCiN+PXzJyv8NWY7VcF5vBhZp6qhK3A2zhb4UPYgBtPKjAWEa9VQdsOovpk5jSmW1Cflt/xCt+lsZ4vMuBRPPhl9Myu4yaHXi8ke3G8zafr7UJSBX2ISbzQTQ+0iLGu+E0gehJQAuzE3/gJf/UiABtL8hmN1axnASXQlpI8uxVQfO5q/E1Har6nQZSNK/YO3MFvXbq9i5+xLTP/qMkoKns6EbEYj7IL5zL15tvZLkhAP8/A1/G/vdeRSGN1c+kAAAAASUVORK5CYII="
+                                    alt="voice"></button>
+                            <button><img class="h-6 ml-2"
+                                    style="filter: invert(96%) sepia(0%) saturate(0%) hue-rotate(204deg) brightness(87%) contrast(96%);"
+                                    src="data:image/png;base64,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"
+                                    alt="copy"></button>
+                        </div>
+                        <button id = 'translate' class="p-3 bg-green-500 text-white font-bold rounded-br-xl w-28">번역하기</button>
+                    </div>
+                </div>
+
+                <!-- Card -->
+                <div
+                    class="flex flex-col min-w-[26rem] w-1/3 h-[420px] m-2 shadow-md border-[1px] rounded-xl border-slate-300">
+                    <!-- Card header -->
+                    <div class="flex items-center justify-between mt-4 ml-2 mr-3">
+                        <select
+                            class="form-select p-2 text-xl border-none outline-none resize-none dark:bg-slate-800 dark:text-slate-200"
+                            style="width: auto" id="select-box" aria-label="Default select example">
+                            <option>번역할 언어</option>
+                            <option value="ko">한국어</option>
+                            <option value="en" selected>English</option>
+                            <option value="ja">日本語</option>
+                        </select>
+                    </div>
+                    <!-- Card body -->
+                    <div class="flex-auto mt-3 h-1/2 border-t-[1px]">
+                        <div class="block h-full p-2">
+                            <textarea id = 'translated-box'
+                                class="w-full h-full p-2 mr-3 text-lg outline-none resize-none textarea dark:bg-slate-800 dark:text-white"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Footer 부분 -->
+            <footer
+                class="flex justify-around sm:hidden md:flex bg-[#fbfbfb] p-4 border-[#eee] border-[1px] dark:bg-slate-800 dark:text-white dark:border-slate-800">
+                <div>
+                    <a href="">
+                        <div class="flex items-center mb-3">
+                            <span class="inline-block bg-[#fff] shadow-lg rounded-md">
+                                <img class="w-8 h-8"
+                                    src="https://papago.naver.com//e3bff6deb50f078fe094f764fac152e8.png" alt="">
+                            </span>
+                            <span class="font-semibold text-sm ml-2">APP Download</span>
+                        </div>
+                    </a>
+                    <ul class="w-72 flex flex-wrap text-xs">
+                        <li class="mr-2">이용약관</li>
+                        <li class="mr-2"><strong>개인정보처리방침</strong></li>
+                        <li class="mr-2"><strong>책임의 한계와 법적고지</strong></li>
+                        <li class="mr-2">고객센터</li>
+                        <li class="mr-2">의견제안</li>
+                        <li class="mr-2">준수사항</li>
+                        <li class="mr-2">품질 개선 동의</li>
+                        <li class="mr-2">단축키</li>
+                        <li class="mr-2"><strong>제휴API 이용문의</strong></li>
+                    </ul>
+                    <a href="" class="text-xs text-gray-500">ⓒ NAVER Corp.</a>
+                </div>
+                <div>
+                    <button class="bg-[#f1f1f1] text-xs text-black font-semibold py-2 px-4 rounded-2xl">
+                        한국어 ↓
+                    </button>
+                </div>
+            </footer>
+        </article>
+    </div>
+
+</body>
+
+</html>

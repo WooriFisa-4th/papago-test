@@ -12,8 +12,9 @@ function updateCharCount() {
 function debounce(func, wait) {
     let timeout;
     return function(...args) {
-        updateCharCount();
         clearTimeout(timeout);
+        updateCharCount();
+        targetTextArea.innerText = `Translating...`;
         timeout = setTimeout(() => func.apply(this, args), wait);
     };
 }
@@ -64,6 +65,11 @@ async function translate(source, target, text) {
 
 // Listener
 sourceTextArea.addEventListener('input', debounce(async () => {
+    if(sourceTextArea.value === '') {
+        targetTextArea.innerText = '';
+        return;
+    }
+    
     try {
         const [responseCode, langCode] = await detectLang(sourceTextArea.value);
         console.log(responseCode, langCode);
